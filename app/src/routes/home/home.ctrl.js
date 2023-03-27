@@ -8,10 +8,13 @@ const output = {
   hello: (req, res) => {
     res.render("home/index");
   },
-
   // 로그인 화면
   login: (req, res) => {
     res.render("home/login");
+  },
+  // 회원가입 화면
+  register: (req, res) => {
+    res.render("home/register");
   },
 };
 
