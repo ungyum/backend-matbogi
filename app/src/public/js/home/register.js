@@ -12,6 +12,17 @@ const idInput = document.getElementById("id"),
 
 registerBtn.addEventListener("click", register);
 function register() {
+  // 값 입력 확인
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].value === "") {
+      return alert(`${inputs[i].placeholder} 값을 입력하세요`);
+    }
+  }
+  // 비밀번호 다른지 확인
+  if (pwInput.value !== confirmPwInput.value) {
+    return alert("비밀번호가 일치하지 않습니다.");
+  }
+  // post할 정보 담기
   const userInfo = {
     id: idInput.value,
     pw: pwInput.value,
