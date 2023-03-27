@@ -1,6 +1,6 @@
 "use strict";
 
-const User = require("../../models/User.js");
+const User = require("../../MODELS/User.js");
 
 // 단순히 html을 넘겨주는 부분
 const output = {
