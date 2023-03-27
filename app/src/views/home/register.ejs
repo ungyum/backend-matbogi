@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/home/login.css" />
-    <script src="JS/home/register.js"></script>
+    <script src="JS/home/register.js" defer></script>
     <title>회원가입</title>
   </head>
   <body>
@@ -14,9 +14,9 @@
         <form class="register-form">
           <input id="id" type="text" placeholder="아이디" />
           <input id="pw" type="text" placeholder="비밀번호" />
-          <input id="confirm-pw" type="text" placeholder="비밀번호 확인" />
+          <input id="confirmPw" type="text" placeholder="비밀번호 확인" />
           <input id="nickname" type="text" placeholder="닉네임" />
-          <button>회원가입</button>
+          <button type="button" id="registerBtn">회원가입</button>
           <p class="message">
             이미 회원이신가요?<a href="/login">로그인하기</a>
           </p>

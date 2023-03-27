@@ -20,11 +20,20 @@ const output = {
 
 // API들, 클라이언트의 요청값으로 뭔가 프로세싱을 하는 부분들
 const process = {
-  // 로그인 버튼 눌렀을 때
+  // 로그인 버튼 클릭
   login: (req, res) => {
     const user = new User(req.body);
     const response = user.login();
     return res.json(response);
+  },
+
+  // 회원가입 버튼 클릭
+  register: (req, res) => {
+    return res.json({ hello: "hello" });
+    // 구현하고 싶은 기능
+    // const user = new User(req.body);
+    // const response = user.register();
+    // return res.json(response)
   },
 };
 

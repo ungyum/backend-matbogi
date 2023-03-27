@@ -1,5 +1,9 @@
 "use strict";
 
+// 오토컴플리트 끄기
+const inputs = document.querySelectorAll("input");
+inputs.forEach((e) => (e.autocomplete = "off"));
+
 const idInput = document.getElementById("id"),
   pwInput = document.getElementById("pw"),
   loginBtn = document.getElementById("loginBtn");
