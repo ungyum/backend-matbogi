@@ -1,48 +1,27 @@
 "use strict";
 
+const User = require("../../models/User.js");
+
+// 단순히 html을 넘겨주는 부분
 const output = {
+  // 메인 페이지
   hello: (req, res) => {
     res.render("home/index");
   },
+
+  // 로그인 화면
   login: (req, res) => {
     res.render("home/login");
   },
 };
 
-// DB 느낌내기 ㅎㅎ
-const users = [
-  {
-    id: "asdf",
-    pw: "qwer",
-  },
-  {
-    id: "haha",
-    pw: "jaja",
-  },
-];
-
+// API들, 클라이언트의 요청값으로 뭔가 프로세싱을 하는 부분들
 const process = {
+  // 로그인 버튼 눌렀을 때
   login: (req, res) => {
-    let reqData = req.body;
-    let userFound = users.find((i) => i.id === reqData.id);
-    if (userFound != null) {
-      // 회원확인 됨
-      if (userFound.pw === reqData.pw) {
-        return res.json({
-          success: true,
-        });
-      } else {
-        return res.json({
-          success: false,
-          msg: "비밀번호가 틀렸습니다.",
-        });
-      }
-    } else {
-      return res.json({
-        success: false,
-        msg: "회원 정보가 없습니다.",
-      });
-    }
+    const user = new User(req.body);
+    const response = user.login();
+    return res.json(response);
   },
 };
 

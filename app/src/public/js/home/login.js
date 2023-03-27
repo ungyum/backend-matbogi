@@ -20,6 +20,13 @@ function login() {
   })
     .then((r) => r.json())
     .then((j) => {
-      console.log(j);
+      if (j.success === true) {
+        location.href = "/";
+      } else {
+        alert(j.msg);
+      }
+    })
+    .catch((err) => {
+      console.err(new Error(err));
     });
 }
